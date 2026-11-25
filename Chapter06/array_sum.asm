@@ -1,0 +1,26 @@
+; Add two byte arrays element by element and write the result to a third array
+; (addressing with SI, BX, DI).
+; Source: Chapter 6 slides, "Summing Array Elements" and "Code Trace: Array Sum".
+; MEMORY: vec3 4
+org 100h
+jmp start
+vec1 db 1, 2, 5, 6
+vec2 db 3, 5, 6, 1
+vec3 db ?, ?, ?, ?
+start:
+lea si, vec1
+lea bx, vec2
+lea di, vec3
+mov cx, 4
+sum:
+mov al, [si]
+add al, [bx]
+mov [di], al
+inc si
+inc bx
+inc di
+loop sum
+ret
+
+; Expected output:
+; vec3: 04h 07h 0Bh 07h
