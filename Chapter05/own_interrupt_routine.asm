@@ -7,7 +7,7 @@ cli                 ; disable interrupts
 mov word ptr es:[90h*4], offset isr  ; IP
 mov word ptr es:[90h*4+2], cs       ; CS
 sti                 ; enable interrupts
-int 90h             ; our own interrupt
+int 90h             ; our interrupt
 ret
 isr:
 mov ah, 0Eh

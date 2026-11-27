@@ -1,5 +1,5 @@
 ; Real unipolar stepper motor, 8255 port A (310h = 784): half-step sequence 01h 03h 02h 06h
-; 04h 0Ch 08h 09h. pos starts at 0, INC makes the first OUT half[1] = 03h; AND BX, 7 keeps the
+; 04h 0Ch 08h 09h. pos starts at 6, INC makes the first OUT half[7] = 09h; AND BX, 7 keeps the
 ; index in 0-7. delay (CX = 2500 LOOP iterations, ~10 ms) sets the step interval, i.e. the speed.
 ; Endless loop: each step is ~2510 instructions; LIMIT shows the first three steps.
 ; Source: Chapter 10.2 Device Control, "Real Motor Sequences"
@@ -23,10 +23,10 @@ loop $
 ret
 half db 01h,03h,02h,06h
      db 04h,0Ch,08h,09h
-pos  dw 0
+pos  dw 6
 
 ; Expected output:
+; OUT 784 <- 09h
+; OUT 784 <- 01h
 ; OUT 784 <- 03h
-; OUT 784 <- 02h
-; OUT 784 <- 06h
-; pos: 03h 00h
+; pos: 09h 00h

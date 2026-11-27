@@ -5,7 +5,7 @@
 ; PORT 33: B8h BAh
 ; REGISTERS: AL
 org 100h
-in al, 21h           ; read the IMR
+in al, 21h           ; read IMR
 or al, 00000010b     ; mask IRQ1
 out 21h, al
 mov cx, 3            ; critical work

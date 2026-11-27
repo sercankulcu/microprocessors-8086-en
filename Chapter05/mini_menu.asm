@@ -7,7 +7,7 @@ show:
 mov dx, offset menu
 mov ah, 09h
 int 21h
-mov ah, 01h       ; read the choice
+mov ah, 01h       ; read choice
 int 21h
 cmp al, 'q'
 je quit

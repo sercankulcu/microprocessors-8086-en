@@ -4,7 +4,7 @@
 ORG 100h
 MOV AL, var1   ; AL <- var1
 MOV BX, var2   ; BX <- var2
-RET            ; end the program
+RET            ; end program
 VAR1 DB 7      ; BYTE, 7
 var2 DW 1234h  ; WORD, 1234h
 

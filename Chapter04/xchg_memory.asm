@@ -10,7 +10,7 @@ MOV DX, 2222h
 MOV AX, CX         ; backup
 MOV CX, DX
 MOV DX, AX         ; swapped
-XCHG CX, DX        ; one instruction
+XCHG CX, DX        ; one instr.
 RET
 num DB 0A5h
 

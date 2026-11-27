@@ -9,7 +9,7 @@ mov word ptr es:[60h*4], offset isr
 mov word ptr es:[60h*4+2], cs
 sti
 mov al, '#'
-int 60h              ; our own interrupt
+int 60h              ; our interrupt
 ret
 isr:
 mov ah, 0Eh

@@ -1,7 +1,7 @@
 ; The PUTC macro: writes a character, advances the cursor; AX is preserved. Every use is 8 bytes.
 ; Slides 9.1 "Writing a Character to the Screen" (the same body and the PUTC 'A' / PUTC 'B' use
 ; are also on the "Macro Properties" slide).
-; writes a character, advances the cursor
+; prints a char, moves the cursor
 PUTC  MACRO  char
       push  ax
       mov   al, char
